@@ -9,21 +9,21 @@ import { Observable } from "rxjs";
 
 export class UsuariosService {
 
-public urlApi ='http://api.test/api/usuarios'
+public urlApi ='https://greve-gerard-60497.herokuapp.com/api/usuarios'
 
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<any> {
-    return this.http.get('http://api.test/api/usuarios')
+    return this.http.get('https://greve-gerard-60497.herokuapp.com/api/usuarios')
   }
 
   createUsers(user:{name:string,lastname:string,email:string}):Observable<any> {
     console.log('hola',user)
-    return this.http.post('http://api.test/api/usuarios',user)
+    return this.http.post('https://greve-gerard-60497.herokuapp.com/api/usuarios',user)
   }
 
   editUsers(user:{id:number, name: string, lastname: string, email: string}):Observable<any> {
-    return this.http.put('http://api.test/api/usuarios/'+user.id,user)
+    return this.http.put('https://greve-gerard-60497.herokuapp.com/api/usuarios/'+user.id,user)
   }
 
   deteleUsers(id:string):Observable<any> {

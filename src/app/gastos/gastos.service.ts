@@ -8,21 +8,21 @@ import { Observable } from "rxjs";
 
 export class GastosService {
 
-public urlApi ='http://api.test/api/gastos'
+public urlApi ='https://greve-gerard-60497.herokuapp.com/api/gastos'
 
   constructor(private http: HttpClient) { }
 
   getGastos(): Observable<any> {
-    return this.http.get('http://api.test/api/gastos')
+    return this.http.get('https://greve-gerard-60497.herokuapp.com/api/gastos')
   }
 
   createGastos(user:{descripcion:any,monto:number,id_usuario:any}):Observable<any> {
     console.log('hola',user)
-    return this.http.post('http://api.test/api/gastos',user)
+    return this.http.post('https://greve-gerard-60497.herokuapp.com/api/gastos',user)
   }
 
   editGastos(user:{id:number, descripcion:any,monto:number,id_usuario:any}):Observable<any> {
-    return this.http.put('http://api.test/api/gastos/'+user.id,user)
+    return this.http.put('https://greve-gerard-60497.herokuapp.com/api/gastos/'+user.id,user)
   }
 
   deteleGastos(id:string):Observable<any> {
