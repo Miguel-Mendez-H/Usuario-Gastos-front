@@ -12,7 +12,7 @@ export class ModalComponent implements OnInit {
   static createUser() {
     throw new Error('Method not implemented.');
   }
- 
+
   @Input() user:{id?:number, name: string,lastname: string,email:string} = {name:'', lastname:'',email:''}
   @Input() tittle:string=''
 
@@ -23,9 +23,9 @@ export class ModalComponent implements OnInit {
   inputName:any;
   inputLastName:any;
   inputEmail:any;
-  
+
   closeResult: string | undefined;
-  
+
   constructor(private modalService: NgbModal) {}
   ngOnInit(): void {
     this.inputId =this.user.id
@@ -33,7 +33,7 @@ export class ModalComponent implements OnInit {
     this.inputLastName=this.user.lastname
     this.inputEmail=this.user.email
   }
-    
+
   open(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -46,7 +46,7 @@ export class ModalComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-  
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';

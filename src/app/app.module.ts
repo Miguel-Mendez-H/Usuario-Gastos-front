@@ -27,10 +27,10 @@ import { MatSelectModule } from '@angular/material/select';
     ModalComponent,
     gastosComponent,
     ModalGastoComponent,
-    
-    
+
+
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -41,11 +41,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     FormsModule,
     MatSelectModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
-  
-  
+
+
 })
 export class AppModule { }

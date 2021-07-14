@@ -34,7 +34,6 @@ export class gastosComponent implements OnInit {
   listarGastos() {
     this.appService.getGastos().subscribe(data => {
       this.gastosArray = data
-      console.log(data)
     })
   }
 
@@ -45,14 +44,14 @@ export class gastosComponent implements OnInit {
 
   editarGastos(user:{id:any, descripcion:any, monto:number, id_usuario:any}) {
     this.appService.editGastos(user).subscribe(data=>{
-      this.gastosArray[this.gastosArray.findIndex(u => u.id == user.id)]=user
+      this.gastosArray[this.gastosArray.findIndex(u => u.id === user.id)]=user
       this.table.renderRows()
     })
 
   }
 
   eliminarGastos(id: string) {
-    let userDeleted = { id: id }
+    const userDeleted = { id }
     this.appService.deteleGastos(userDeleted.id).subscribe();
   }
 

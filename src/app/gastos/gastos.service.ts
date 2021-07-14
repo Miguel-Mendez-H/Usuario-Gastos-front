@@ -17,7 +17,6 @@ public urlApi ='https://greve-gerard-60497.herokuapp.com/api/gastos'
   }
 
   createGastos(user:{descripcion:any,monto:number,id_usuario:any}):Observable<any> {
-    console.log('hola',user)
     return this.http.post('https://greve-gerard-60497.herokuapp.com/api/gastos',user)
   }
 

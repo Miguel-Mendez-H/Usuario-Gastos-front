@@ -18,7 +18,6 @@ public urlApi ='https://greve-gerard-60497.herokuapp.com/api/usuarios'
   }
 
   createUsers(user:{name:string,lastname:string,email:string}):Observable<any> {
-    console.log('hola',user)
     return this.http.post('https://greve-gerard-60497.herokuapp.com/api/usuarios',user)
   }
 

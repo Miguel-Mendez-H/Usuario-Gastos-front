@@ -29,7 +29,6 @@ export class usuariosComponent implements OnInit {
   listarUsuarios() {
     this.appService.getUsers().subscribe(data => {
       this.usuariosArray = data
-      console.log(data)
     })
   }
 
@@ -40,14 +39,14 @@ export class usuariosComponent implements OnInit {
 
   editarUsuario(user:{id:number, name: string, lastname: string, email: string}) {
     this.appService.editUsers(user).subscribe(data=>{
-      this.usuariosArray[this.usuariosArray.findIndex(u => u.id == user.id)]=user
+      this.usuariosArray[this.usuariosArray.findIndex(u => u.id === user.id)]=user
       this.table?.renderRows()
     })
 
   }
 
   eliminarUsuario(id: string) {
-    let userDeleted = { id: id }
+    const userDeleted = { id }
     this.appService.deteleUsers(userDeleted.id).subscribe();
   }
 
