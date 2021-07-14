@@ -1,0 +1,12 @@
+.btn.btn-dark{
+    margin: 10px;
+    width: 90px;
+    height: 40px;
+
+}
+
+.mat-toolbar.mat-toolbar-single-row{
+    display: flex;
+    justify-content: center;
+    background-color: #999;
+}

@@ -1,0 +1,43 @@
+table {
+    width: 100%;
+  }
+.mat-toolbar{
+    justify-content: space-between;
+  }
+  
+
+.btn.btn-lg.btn-outline-primary{
+    margin:10px;
+  
+  }
+.mat-cell, .mat-footer-cell{
+  font-size: 18px;
+}
+.mat-table.cdk-table.mat-elevation-z8{
+    text-align: center;
+    font-size:30px;
+    
+  }
+.mat-header-cell.cdk-header-cell.cdk-column-id.mat-column-id{
+    text-align: center;
+    font-size:30px;
+  }
+
+.mat-header-cell.cdk-header-cell.cdk-column-name.mat-column-name{
+    text-align: center;
+    font-size:30px;
+  }
+.mat-header-cell.cdk-header-cell.cdk-column-lastname.mat-column-lastname{
+    text-align: center;
+    font-size:30px;
+  }
+.mat-header-cell.cdk-header-cell.cdk-column-email.mat-column-email{
+    text-align: center;
+    font-size:30px;
+  }
+
+.mat-header-cell.cdk-header-cell.cdk-column-actions.mat-column-actions{
+    text-align: center;
+    font-size:30px;
+  }
+

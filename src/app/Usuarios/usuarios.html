@@ -1,0 +1,50 @@
+<mat-toolbar>
+  <span>Registro de Usuarios</span>
+  <app-modal (createUser)="crearUsuario($event)" tittle="Crear Usuario">
+  </app-modal>
+</mat-toolbar>
+
+<div class="ListaUsuarios">
+  <table mat-table [dataSource]="usuariosArray" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>id</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastname">
+      <th mat-header-cell *matHeaderCellDef>Apellido</th>
+      <td mat-cell *matCellDef="let element">{{ element.lastname }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let row">
+        <button
+          class="btn btn-dark"
+          (click)="eliminarUsuario(row.id)"
+          color="primary"
+          title="Eliminar usuario"
+        >
+          Eliminar usuario
+        </button>
+        <app-modal
+          [user]="{id:row.id,name:row.name,lastname:row.lastname,email:row.email}"
+          (editUser)="editarUsuario($event)"
+          tittle="Editar Usuario"
+        ></app-modal>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -1,0 +1,39 @@
+<button class="btn btn-dark" (click)="open(mymodal)">
+  {{tittle}}
+</button>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{tittle}}</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <label for="name">Nombre</label>
+    <div class="input-group">
+      <input class="name" placeholder="Digite el nombre" [(ngModel)]="inputName"/>
+    </div>
+    <label for="lastName">Apellido</label>
+    <div class="input-group">
+      <input class="LastName" placeholder="Digite el apellido" [(ngModel)]="inputLastName"/>
+    </div>
+    <label for="email">Email</label>
+    <div class="input-group">
+      <input class="email" placeholder="Digite el email" [(ngModel)]="inputEmail"/>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close()">
+      {{tittle.split(' ')[0]}}
+    </button>
+  </div>
+</ng-template>

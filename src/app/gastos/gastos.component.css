@@ -1,0 +1,48 @@
+table {
+    width: 100%;
+  }
+  .mat-toolbar{
+    justify-content: space-between
+  }
+
+.btn.btn-lg.btn-outline-primary{
+  margin:10px;
+
+}
+
+.mat-cell, .mat-footer-cell{
+  font-size: 18px;
+}
+.ListaGastos{
+  text-align: center;
+}
+
+.mat-header-cell.cdk-header-cell.cdk-column-id.mat-column-id{
+  text-align: center;
+  font-size:30px;
+}
+
+.mat-header-cell.cdk-header-cell.cdk-column-descripcion.mat-column-descripcion{
+  text-align: center;
+  font-size:30px;
+}
+
+.mat-header-cell.cdk-header-cell.cdk-column-monto.mat-column-monto{
+  text-align: center;
+  font-size:30px;
+}
+
+.mat-header-cell.cdk-header-cell.cdk-column-id_usuario.mat-column-id_usuario{
+  text-align: center;
+  font-size:30px;
+}
+
+.mat-cell.cdk-cell.cdk-column-actions.mat-column-actions{
+  text-align: center;
+  font-size:30px;
+}
+
+.mat-header-cell.cdk-header-cell.cdk-column-actions.mat-column-actions{
+  text-align: center;
+  font-size:30px;
+}
