@@ -1,4 +1,3 @@
-import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { UsuariosService } from './usuarios.service';
@@ -14,7 +13,7 @@ import { UsuariosService } from './usuarios.service';
 
 
 export class usuariosComponent implements OnInit {
-  @ViewChild(MatTable) table!: MatTable<any>;
+  @ViewChild(MatTable) table?: MatTable<any>;
   usuarios: any;
   usuariosArray: any[] = [];
   displayedColumns: string[] = ['id', 'name', 'lastname', 'email', 'actions'];
@@ -42,7 +41,7 @@ export class usuariosComponent implements OnInit {
   editarUsuario(user:{id:number, name: string, lastname: string, email: string}) {
     this.appService.editUsers(user).subscribe(data=>{
       this.usuariosArray[this.usuariosArray.findIndex(u => u.id == user.id)]=user
-      this.table.renderRows()
+      this.table?.renderRows()
     })
 
   }
